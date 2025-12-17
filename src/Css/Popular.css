@@ -1,0 +1,185 @@
+.popular-section {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.popular-sub {
+  color: #ffb400;
+  font-weight: 600;
+  display: block;
+}
+
+.popular-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.popular-tabs {
+  margin-bottom: 50px;
+}
+
+.popular-tabs button {
+  background: none;
+  border: none;
+  margin: 0 14px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.popular-tabs .active {
+  color: #ffb400;
+  border-color: #ffb400;
+}
+
+/* CARDS */
+.popular-card {
+  text-align: center;
+}
+
+.popular-card img {
+  width: 100%;
+  max-width: 220px;
+}
+
+.popular-card h5 {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.popular-card .price {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.popular-card button {
+  background: #ffb400;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+/* ===========================
+   RESPONSIVE – POPULAR SECTION
+   =========================== */
+
+/* Large screens (≤ 1200px) */
+@media (max-width: 1200px) {
+  .popular-title {
+    font-size: 38px;
+  }
+
+  .popular-card img {
+    max-width: 200px;
+  }
+}
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .popular-section {
+    padding: 80px 0;
+  }
+
+  .popular-title {
+    font-size: 34px;
+  }
+
+  .popular-tabs {
+    margin-bottom: 40px;
+  }
+
+  .popular-tabs button {
+    margin: 0 10px;
+    font-size: 15px;
+  }
+
+  .popular-card img {
+    max-width: 180px;
+  }
+}
+
+/* Small tablets / large mobiles (≤ 768px) */
+@media (max-width: 768px) {
+  .popular-section {
+    padding: 70px 0;
+  }
+
+  .popular-title {
+    font-size: 30px;
+  }
+
+  .popular-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .popular-tabs button {
+    margin: 0;
+  }
+
+  .popular-card img {
+    max-width: 170px;
+  }
+
+  .popular-card h5 {
+    font-size: 16px;
+  }
+
+  .popular-card .price {
+    font-size: 15px;
+  }
+}
+
+/* Mobile phones (≤ 576px) */
+@media (max-width: 576px) {
+  .popular-section {
+    padding: 60px 0;
+  }
+
+  .popular-sub {
+    font-size: 14px;
+  }
+
+  .popular-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .popular-tabs {
+    gap: 10px;
+  }
+
+  .popular-tabs button {
+    font-size: 14px;
+  }
+
+  .popular-card img {
+    max-width: 150px;
+  }
+
+  .popular-card button {
+    padding: 8px 22px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices (≤ 400px) */
+@media (max-width: 400px) {
+  .popular-title {
+    font-size: 24px;
+  }
+
+  .popular-card img {
+    max-width: 135px;
+  }
+
+  .popular-card h5 {
+    font-size: 15px;
+  }
+}
+.popular-products .col-lg-3 {
+  margin-bottom: 40px;
+}

@@ -1,0 +1,208 @@
+/* =========================
+   BASE NAVBAR
+========================= */
+.gomoto-navbar {
+  background: #1f2330;
+  padding: 18px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+
+.gomoto-container {
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.gomoto-logo img {
+  height: 44px;
+}
+
+/* TOGGLER */
+.gomoto-toggle {
+  border: none;
+}
+
+.gomoto-toggle:focus {
+  box-shadow: none;
+}
+
+/* COLLAPSE */
+.gomoto-collapse {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* CENTER MENU */
+.gomoto-menu {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.gomoto-menu .nav-link,
+.gomoto-menu .dropdown-toggle {
+  color: #fff !important;
+  font-weight: 600;
+  margin: 0 18px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.gomoto-menu .nav-link:hover,
+.gomoto-menu .dropdown-toggle:hover {
+  color: #ffb400 !important;
+}
+
+/* DROPDOWN FIX */
+.gomoto-dropdown .dropdown-menu {
+  background: #1f2330;
+  border: 1px dashed rgba(255,255,255,0.15);
+  padding: 10px 0;
+  margin-top: 12px;
+  animation: dropdownFade 0.25s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gomoto-dropdown .dropdown-item {
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 22px;
+}
+
+.gomoto-dropdown .dropdown-item:hover {
+  background: transparent;
+  color: #ffb400;
+}
+
+/* RIGHT ICONS */
+.gomoto-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.phone {
+  color: #ffb400;
+}
+
+.icon {
+  cursor: pointer;
+  position: relative;
+}
+
+.cart .count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ffb400;
+  color: #000;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+
+/* =========================
+   LARGE DESKTOP (1400px+)
+========================= */
+@media (min-width: 1400px) {
+  .gomoto-menu .nav-link {
+    margin: 0 22px;
+    font-size: 16px;
+  }
+
+  .gomoto-logo img {
+    height: 48px;
+  }
+}
+
+/* =========================
+   LAPTOPS (1200–1399px)
+========================= */
+@media (max-width: 1399px) {
+  .gomoto-menu .nav-link {
+    margin: 0 16px;
+  }
+}
+
+/* =========================
+   TABLETS (992–1199px)
+========================= */
+@media (max-width: 1199px) {
+  .gomoto-navbar {
+    padding: 14px 0;
+  }
+
+  .gomoto-collapse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gomoto-menu {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  .gomoto-menu .nav-link {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .gomoto-icons {
+    margin-top: 15px;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   LARGE PHONES (768–991px)
+========================= */
+@media (max-width: 991px) {
+  .gomoto-logo img {
+    height: 40px;
+  }
+
+  .gomoto-menu .nav-link {
+    font-size: 15px;
+  }
+
+  .phone {
+    display: none; /* hide phone text on smaller screens */
+  }
+}
+
+/* =========================
+   SMALL PHONES (≤767px)
+========================= */
+@media (max-width: 767px) {
+  .gomoto-navbar {
+    padding: 12px 0;
+  }
+
+  .gomoto-menu {
+    margin: 15px 0;
+  }
+
+  .gomoto-menu .nav-link {
+    font-size: 14px;
+  }
+
+  .gomoto-icons {
+    gap: 14px;
+  }
+}

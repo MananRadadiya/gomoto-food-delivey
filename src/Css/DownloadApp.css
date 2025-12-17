@@ -1,0 +1,197 @@
+/* ===========================
+   DOWNLOAD APP SECTION
+   =========================== */
+
+.download-section {
+  padding: 100px 0;
+  background: #f7f4ed;
+  overflow: hidden;
+}
+
+/* TEXT */
+.download-subtitle {
+  color: #ffb400;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.download-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #1f2330;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.download-title span {
+  color: #ffb400;
+}
+
+.download-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+/* FEATURES */
+.download-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.download-features li {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1f2330;
+}
+
+.download-features li span {
+  width: 34px;
+  height: 34px;
+  background: #ffb400;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+/* STORE BUTTONS */
+.download-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.download-buttons img {
+  height: 52px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.download-buttons img:hover {
+  transform: translateY(-3px);
+}
+
+/* PHONE IMAGE */
+.phone-wrapper {
+  position: relative;
+  max-width: 420px;
+  margin: auto;
+}
+
+.phone-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/* ===========================
+   LARGE DESKTOP (1440px+)
+   =========================== */
+@media (min-width: 1400px) {
+  .download-title {
+    font-size: 48px;
+  }
+
+  .download-text {
+    font-size: 17px;
+  }
+
+  .phone-wrapper {
+    max-width: 460px;
+  }
+}
+
+/* ===========================
+   LAPTOP & TABLET LANDSCAPE
+   =========================== */
+@media (max-width: 991px) {
+  .download-section {
+    padding: 80px 0;
+  }
+
+  .download-title {
+    font-size: 36px;
+  }
+
+  .download-text {
+    max-width: 100%;
+  }
+
+  .phone-wrapper {
+    margin-top: 50px;
+    max-width: 360px;
+  }
+}
+
+/* ===========================
+   TABLET PORTRAIT
+   =========================== */
+@media (max-width: 768px) {
+  .download-section {
+    text-align: center;
+  }
+
+  .download-features li {
+    justify-content: center;
+  }
+
+  .download-buttons {
+    justify-content: center;
+  }
+}
+
+/* ===========================
+   MOBILE DEVICES
+   =========================== */
+@media (max-width: 576px) {
+  .download-section {
+    padding: 60px 0;
+  }
+
+  .download-title {
+    font-size: 30px;
+  }
+
+  .download-text {
+    font-size: 15px;
+  }
+
+  .download-features li {
+    font-size: 14px;
+  }
+
+  .download-buttons img {
+    height: 46px;
+  }
+
+  .phone-wrapper {
+    max-width: 300px;
+  }
+}
+
+/* ===========================
+   EXTRA SMALL PHONES (360px)
+   =========================== */
+@media (max-width: 360px) {
+  .download-title {
+    font-size: 26px;
+  }
+
+  .download-buttons img {
+    height: 42px;
+  }
+
+  .phone-wrapper {
+    max-width: 260px;
+  }
+}

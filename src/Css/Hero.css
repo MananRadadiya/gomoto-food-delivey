@@ -1,0 +1,197 @@
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 18, 28, 0.92);
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   TEXT
+========================= */
+.hero-text h1 {
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-text h1 span {
+  color: #ffb400;
+}
+
+.hero-text p {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 24px 0;
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.hero-btn {
+  background: #ffb400;
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #ffaa00;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.hero-image {
+  text-align: right;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+/* CATEGORY CARDS */
+.hero-categories {
+  margin-top: 80px;
+}
+
+.hero-category-card {
+  background: #f6f1e8;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hero-category-card img {
+  width: 60px;
+  margin-bottom: 14px;
+}
+
+.hero-category-card h5 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-category-card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* =========================
+   LARGE LAPTOPS (≤1200px)
+========================= */
+@media (max-width: 1200px) {
+  .hero-text h1 {
+    font-size: 54px;
+  }
+}
+
+/* =========================
+   TABLETS (≤991px)
+========================= */
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto;
+    padding: 100px 0 80px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 44px;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-image {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+  }
+}
+
+/* =========================
+   MOBILE (≤767px)
+========================= */
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 90px 0 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  .hero-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  .hero-image img {
+    max-width: 85%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (≤480px)
+========================= */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+}

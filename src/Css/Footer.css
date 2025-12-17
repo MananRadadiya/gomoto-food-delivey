@@ -1,0 +1,226 @@
+/* =========================== FOOTER BASE =========================== */
+.gomoto-footer {
+    background: #1f2330;
+    color: #b5b7c4;
+    position: relative;
+    padding-top: 160px;
+}
+
+/* =========================== CTA SECTION =========================== */
+.footer-cta {
+    margin-top: -120px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-cta-inner {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffb400;
+}
+
+/* LEFT IMAGE */
+.footer-cta-image {
+    width: 45%;
+}
+
+.footer-cta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RIGHT CONTENT */
+.footer-cta-content {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    gap: 20px;
+    color: #000;
+}
+
+.footer-cta-content span {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.footer-cta-content h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 4px 0 0;
+}
+
+/* ICON */
+.footer-cta-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+/* =========================== MAIN FOOTER =========================== */
+.footer-main {
+    padding: 140px 0 60px;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent), #1f2330;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* SOCIAL ICONS */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.footer-socials a {
+    color: #ffb400;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================== BOTTOM BAR =========================== */
+.footer-bottom {
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 13px;
+}
+
+.footer-bottom span {
+    color: #ffb400;
+}
+/* ===========================
+   RESPONSIVE – ALL DEVICES
+   =========================== */
+
+/* LARGE DESKTOPS (1400px+) */
+@media (min-width: 1400px) {
+  .footer-cta-inner {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-cta-content h3 {
+    font-size: 32px;
+  }
+
+  .footer-text {
+    font-size: 15px;
+  }
+}
+
+/* LAPTOPS & TABLETS */
+@media (max-width: 991px) {
+  .footer-cta {
+    margin-top: -90px;
+  }
+
+  .footer-cta-inner {
+    flex-direction: column;
+  }
+
+  .footer-cta-image,
+  .footer-cta-content {
+    width: 100%;
+  }
+
+  .footer-cta-image {
+    height: 220px;
+  }
+
+  .footer-cta-content {
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .footer-cta-icon {
+    margin-bottom: 10px;
+  }
+
+  .footer-main {
+    padding: 120px 0 50px;
+  }
+}
+
+/* TABLET PORTRAIT */
+@media (max-width: 768px) {
+  .footer-text {
+    max-width: 90%;
+  }
+
+  .footer-socials {
+    gap: 22px;
+  }
+}
+
+/* MOBILE DEVICES */
+@media (max-width: 576px) {
+  .footer-cta {
+    margin-top: -60px;
+  }
+
+  .footer-cta-image {
+    height: 180px;
+  }
+
+  .footer-cta-content h3 {
+    font-size: 22px;
+  }
+
+  .footer-cta-content span {
+    font-size: 13px;
+  }
+
+  .footer-cta-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .footer-main {
+    padding: 100px 0 40px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* EXTRA SMALL PHONES (360px) */
+@media (max-width: 360px) {
+  .footer-cta-content h3 {
+    font-size: 20px;
+  }
+
+  .footer-cta-icon {
+    width: 54px;
+    height: 54px;
+    font-size: 22px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,225 @@
+.cafe-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+/* Heading */
+.cafe-subtitle {
+  color: #ffb400;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cafe-title {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+/* Card */
+.cafe-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f7f4ed;
+  height: 100%;
+}
+
+.cafe-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Big card */
+.big-card img {
+  height: 100%;
+  min-height: 560px;
+}
+
+/* Tag badge */
+.badge-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #ffb400;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* Card info */
+.card-info {
+  padding: 18px;
+}
+
+.card-info h4,
+.card-info h5 {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-info p {
+  font-size: 14px;
+  color: #777;
+}
+/* =========================
+   LARGE DESKTOP (≥ 1600px)
+   ========================= */
+@media (min-width: 1600px) {
+  .cafe-section {
+    padding: 120px 0;
+  }
+
+  .cafe-title {
+    font-size: 46px;
+  }
+
+  .big-card img {
+    min-height: 620px;
+  }
+
+  .cafe-card img {
+    height: 280px;
+  }
+}
+
+/* =========================
+   STANDARD LAPTOP (1200px – 1599px)
+   ========================= */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .cafe-section {
+    padding: 100px 0;
+  }
+
+  .cafe-title {
+    font-size: 42px;
+  }
+
+  .big-card img {
+    min-height: 560px;
+  }
+
+  .cafe-card img {
+    height: 260px;
+  }
+}
+
+/* =========================
+   SMALL LAPTOP (992px – 1199px)
+   ========================= */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .cafe-section {
+    padding: 80px 0;
+  }
+
+  .cafe-title {
+    font-size: 38px;
+  }
+
+  .big-card img {
+    min-height: 460px;
+  }
+
+  .cafe-card img {
+    height: 240px;
+  }
+}
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .cafe-section {
+    padding: 70px 0;
+  }
+
+  .cafe-title {
+    font-size: 36px;
+  }
+
+  /* Big card height reduced */
+  .big-card img {
+    min-height: 420px;
+  }
+
+  .cafe-card img {
+    height: 240px;
+  }
+}
+
+/* Mobile landscape & small tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .cafe-section {
+    padding: 60px 0;
+  }
+
+  .cafe-title {
+    font-size: 30px;
+  }
+
+  /* Stack cards nicely */
+  .big-card img {
+    min-height: 360px;
+  }
+
+  .cafe-card img {
+    height: 220px;
+  }
+
+  .card-info {
+    padding: 16px;
+  }
+
+  .badge-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+/* Small mobile devices (≤ 576px) */
+@media (max-width: 576px) {
+  .cafe-section {
+    padding: 50px 0;
+  }
+
+  .cafe-title {
+    font-size: 26px;
+  }
+
+  .cafe-subtitle {
+    font-size: 13px;
+  }
+
+  /* Full-width images */
+  .big-card img {
+    min-height: 280px;
+  }
+
+  .cafe-card img {
+    height: 200px;
+  }
+
+  .card-info h4,
+  .card-info h5 {
+    font-size: 16px;
+  }
+
+  .card-info p {
+    font-size: 13px;
+  }
+}
+@media (hover: hover) {
+  .cafe-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cafe-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+}
