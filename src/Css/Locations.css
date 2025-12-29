@@ -1,0 +1,266 @@
+/* =============== VARIABLES & RESET =============== */
+:root {
+  /* Brand Colors */
+  --primary: #FF6B35;
+  --secondary: #F7931E;
+  --accent: #E74C3C;
+  --dark-text: #2d3436;
+  --light-text: #636e72;
+  --bg-color: #f8f9fa;
+  --white: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.08);
+
+  /* Gradients */
+  --brand-gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --hover-gradient: linear-gradient(135deg, #e85a26 0%, #e08010 100%);
+
+  /* Spacing & Layout */
+  --container-width: 1200px;
+  --container-padding: 1.25rem;
+  --card-radius: 1rem;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Typography */
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--bg-color);
+  color: var(--dark-text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =============== LAYOUT UTILS =============== */
+.locations-page {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* =============== HERO SECTION =============== */
+.locations-hero {
+  position: relative;
+  /* Dark overlay combined with image */
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url("../Images/INNER_header_02.jpg") center/cover no-repeat fixed;
+  height: clamp(250px, 40vh, 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.locations-hero-content {
+  z-index: 2;
+  max-width: min(90vw, 600px);
+}
+
+.locations-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.locations-hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* =============== GRID SECTION =============== */
+.locations-section {
+  padding: 4rem var(--container-padding);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  list-style: none;
+}
+
+/* =============== LOCATION CARD =============== */
+.location-card {
+  background: var(--white);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  /* Animation Hook */
+  animation: fadeInUp 0.8s ease-out both; 
+}
+
+.location-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.location-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.location-card:hover .location-image img {
+  transform: scale(1.05);
+}
+
+.rating-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.rating-badge .stars {
+  display: block;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.rating-badge p {
+  font-size: 0.75rem;
+  color: var(--light-text);
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.location-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.location-content h3 {
+  font-size: 1.25rem;
+  color: var(--dark-text);
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+
+.location-info {
+  margin-bottom: 1.5rem;
+}
+
+.location-info p {
+  margin: 0.5rem 0;
+  color: var(--light-text);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location-info .phone { color: var(--primary); font-weight: 600; }
+
+/* Buttons */
+.btn-visit, .btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--brand-gradient);
+  color: var(--white);
+  border: none;
+  border-radius: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.btn-visit {
+  width: 100%;
+  margin-top: auto;
+}
+
+.btn-visit:hover {
+  background: var(--hover-gradient);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(247, 147, 30, 0.4);
+}
+
+/* =============== CTA SECTION =============== */
+.locations-cta {
+  background: var(--brand-gradient);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: var(--white);
+  margin: 2rem var(--container-padding);
+  border-radius: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.locations-cta h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.locations-cta p { margin-bottom: 2rem; opacity: 0.9; }
+
+.btn-primary {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* =============== ANIMATIONS =============== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .locations-section {
+    padding: 2rem 1rem;
+  }
+}

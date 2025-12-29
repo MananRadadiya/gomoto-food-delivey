@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import "./Css/Testimonials.css";
+import "./Css/animations.css";
 
 // 👉 Import your images here
 import user1 from "./Images/client1.jpg";

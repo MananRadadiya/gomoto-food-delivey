@@ -1,9 +1,9 @@
-/* =========================
-   TESTIMONIALS SECTION
-   ========================= */
+/* ====================================================
+   TESTIMONIALS SECTION (Improved + More Responsive)
+==================================================== */
 
 .testimonials-section {
-  padding: 100px 0;
+  padding: 100px 20px;
   background: #ffffff;
   text-align: center;
 }
@@ -14,33 +14,34 @@
   font-weight: 600;
   display: block;
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 16px);
   letter-spacing: 0.5px;
 }
 
-/* Title */
+/* Main Title */
 .testimonials-title {
-  font-size: 42px;
+  font-size: clamp(26px, 4vw, 46px);
   font-weight: 800;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #1f2330;
-  line-height: 1.2;
+  line-height: 1.25;
+  padding: 0 10px;
 }
 
-/* Quote icon */
+/* Quote Icon */
 .quote-icon {
-  font-size: 80px;
+  font-size: clamp(40px, 8vw, 80px);
   color: #ffb400;
   line-height: 1;
   margin-bottom: 20px;
 }
 
-/* Review text */
+/* Review Text */
 .testimonials-text {
   max-width: 820px;
   margin: 0 auto 40px;
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: clamp(14px, 2.4vw, 19px);
+  line-height: 1.75;
   color: #555;
   padding: 0 15px;
 }
@@ -53,8 +54,8 @@
 }
 
 .testimonial-user img {
-  width: 70px;
-  height: 70px;
+  width: clamp(55px, 12vw, 75px);
+  height: clamp(55px, 12vw, 75px);
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
@@ -63,30 +64,30 @@
 .testimonial-user h5 {
   font-weight: 700;
   margin-bottom: 2px;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 18px);
 }
 
 .testimonial-user span {
   color: #ffb400;
   font-weight: 600;
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 15px);
 }
 
-/* Controls */
+/* Controls (Arrows) */
 .testimonial-controls {
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: clamp(10px, 3vw, 20px);
 }
 
 .testimonial-controls button {
-  width: 44px;
-  height: 44px;
+  width: clamp(36px, 8vw, 48px);
+  height: clamp(36px, 8vw, 48px);
   border-radius: 50%;
   border: 1px solid #ddd;
   background: transparent;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 20px);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -97,116 +98,54 @@
   border-color: #ffb400;
 }
 
-/* =========================
-   LARGE LAPTOPS / DESKTOPS
-   ========================= */
-@media (min-width: 1400px) {
-  .testimonials-title {
-    font-size: 46px;
-  }
-
-  .testimonials-text {
-    font-size: 19px;
-  }
-}
-
-/* =========================
-   LAPTOPS / SMALL DESKTOPS
-   ========================= */
-@media (max-width: 1200px) {
-  .testimonials-title {
-    font-size: 38px;
-  }
-
-  .testimonials-text {
-    font-size: 17px;
-  }
-}
-
-/* =========================
-   TABLETS
-   ========================= */
+/* ====================================================
+   TABLET DEVICES
+==================================================== */
 @media (max-width: 992px) {
   .testimonials-section {
-    padding: 80px 0;
-  }
-
-  .testimonials-title {
-    font-size: 34px;
-  }
-
-  .quote-icon {
-    font-size: 64px;
-  }
-
-  .testimonials-text {
-    font-size: 16px;
+    padding: 80px 20px;
   }
 }
 
-/* =========================
-   MOBILE DEVICES
-   ========================= */
+/* ====================================================
+   MOBILE DEVICES (up to 768px)
+==================================================== */
 @media (max-width: 768px) {
   .testimonials-section {
-    padding: 70px 0;
-  }
-
-  .testimonials-title {
-    font-size: 30px;
-  }
-
-  .quote-icon {
-    font-size: 56px;
-  }
-
-  .testimonial-user img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .testimonial-controls button {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-/* =========================
-   SMALL MOBILE DEVICES
-   ========================= */
-@media (max-width: 480px) {
-  .testimonials-section {
-    padding: 60px 0;
-  }
-
-  .testimonials-subtitle {
-    font-size: 13px;
-  }
-
-  .testimonials-title {
-    font-size: 26px;
-  }
-
-  .quote-icon {
-    font-size: 48px;
+    padding: 70px 15px;
   }
 
   .testimonials-text {
-    font-size: 15px;
-    line-height: 1.6;
+    max-width: 90%;
+  }
+}
+
+/* ====================================================
+   SMALL MOBILE (up to 480px)
+==================================================== */
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: 60px 10px;
   }
 
-  .testimonial-user h5 {
-    font-size: 15px;
+  .testimonials-text {
+    line-height: 1.6;
+  }
+}
+
+/* ====================================================
+   EXTRA SMALL MOBILE (320px – 380px)
+==================================================== */
+@media (max-width: 360px) {
+  .testimonials-section {
+    padding: 50px 10px;
   }
 
   .testimonial-controls {
-    gap: 12px;
+    gap: 8px;
   }
 
-  .testimonial-controls button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
+  .testimonials-title {
+    margin-bottom: 20px;
   }
 }

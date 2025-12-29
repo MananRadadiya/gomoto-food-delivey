@@ -1,0 +1,434 @@
+/* =============== DELIVERY PAGE CSS (ENHANCED & FULLY RESPONSIVE) =============== */
+
+/* Root variables for consistent theming, easier maintenance, and dynamic adjustments */
+:root {
+  --primary-gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  --primary-color: #FF6B35;
+  --secondary-color: #F7931E;
+  --text-dark: #333;
+  --text-medium: #666;
+  --text-light: #fff;
+  --bg-light: #f9f9f9;
+  --bg-white: #fff;
+  --border-light: #ddd;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 24px rgba(255, 107, 53, 0.15);
+  --transition: all 0.3s ease;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --container-max-width: 1200px;
+  --section-padding-y: 60px;
+  --section-padding-x: 20px;
+}
+
+/* Reset and base styles for better cross-browser consistency */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--bg-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.delivery-page {
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+/* Container utility for consistent max-width and horizontal padding */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+/* Section title utility */
+.section-title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem); /* Fluid typography */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.625rem;
+  color: var(--text-dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  margin-bottom: 1.875rem;
+  opacity: 0.95;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Section - Enhanced with better overlay, text shadow, and fluid height */
+.delivery-hero {
+  background: url("../Images/INNER_header_02.jpg") center/cover no-repeat;
+  height: clamp(250px, 40vh, 400px); /* Fluid height for responsiveness */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.delivery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Slightly darker for better text readability */
+  backdrop-filter: blur(2px); /* Subtle blur for modern feel */
+}
+
+.delivery-hero h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.delivery-hero p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-top: 0.625rem;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+/* Delivery Process - Improved timeline with SVG arrows for better scalability */
+.delivery-process {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-white);
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  position: relative;
+  align-items: start;
+}
+
+/* SVG timeline connector - Scalable, no image dependency, customizable */
+.steps-container::before {
+  content: '';
+  position: absolute;
+  top: 3.125rem; /* Align with step numbers */
+  left: 3.125rem; /* Start after first circle */
+  right: 3.125rem; /* End before last circle */
+  height: 0.125rem;
+  background: var(--primary-gradient);
+  z-index: 0;
+}
+
+/* Hide connector on small screens where grid is 1-2 columns */
+@media (max-width: 640px) {
+  .steps-container::before {
+    display: none;
+  }
+}
+
+.step-item {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem;
+  background: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number {
+  width: clamp(40px, 10vw, 50px);
+  height: clamp(40px, 10vw, 50px);
+  background: var(--primary-gradient);
+  color: var(--text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  margin-bottom: 0.9375rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-icon {
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  margin: 0.9375rem 0;
+  color: var(--primary-color);
+}
+
+.step-item h3 {
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.step-item p {
+  color: var(--text-medium);
+  font-weight: 600;
+  margin: 0;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+/* Benefits Section - Added subtle animations and better hover states */
+.delivery-benefits {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-white);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5625rem;
+  margin-top: 2.5rem;
+}
+
+.benefit-card {
+  padding: 1.875rem;
+  background: var(--bg-light);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-0.5rem);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.benefit-icon {
+  font-size: clamp(2.5rem, 7vw, 3rem);
+  margin-bottom: 0.9375rem;
+  color: var(--primary-color);
+}
+
+.benefit-card h3 {
+  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  margin: 0 0 0.625rem;
+  color: var(--text-dark);
+}
+
+.benefit-card p {
+  color: var(--text-medium);
+  margin: 0;
+  font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+}
+
+/* Order Form Section - Improved form accessibility, validation styles, and focus states */
+.order-form-section {
+  padding: var(--section-padding-y) 0;
+  background: var(--primary-gradient);
+  color: var(--text-light);
+}
+
+.order-form-section .section-title {
+  color: var(--text-light);
+}
+
+.form-container {
+  background: var(--bg-white);
+  padding: clamp(1.875rem, 5vw, 2.5rem);
+  border-radius: var(--border-radius-md);
+  max-width: 500px;
+  margin: 1.875rem auto 0;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.form-group {
+  margin-bottom: 1.5625rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.1875rem rgba(255, 107, 53, 0.1);
+}
+
+/* Invalid/valid states for better UX */
+.form-group input:invalid:focus,
+.form-group select:invalid:focus {
+  border-color: #e74c3c;
+}
+
+.form-group input:valid:focus,
+.form-group select:valid:focus {
+  border-color: #27ae60;
+}
+
+.btn-start-order {
+  width: 100%;
+  padding: 0.9375rem;
+  background: var(--primary-gradient);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.625rem;
+}
+
+.btn-start-order:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.375rem 0.75rem rgba(255, 107, 53, 0.4);
+}
+
+.btn-start-order:active {
+  transform: translateY(0);
+}
+
+/* Delivery Zone - Placeholder with better styling, potential for real map integration */
+.delivery-zone {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-white);
+}
+
+.zone-image {
+  margin-top: 1.875rem;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #f0f0f0 0%, #f9f9f9 100%);
+  padding: clamp(3rem, 10vw, 3.75rem) 1.25rem;
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  color: var(--text-medium);
+  border: 2px dashed var(--border-light);
+}
+
+/* Enhanced Responsive Breakpoints */
+/* 
+  - 320px: Mobile small
+  - 480px: Mobile large
+  - 640px: Tablet small
+  - 768px: Tablet
+  - 1024px: Laptop
+  - 1280px: Desktop
+  - 1440px+: Large screens
+*/
+
+@media (max-width: 320px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+  .benefit-card {
+    padding: 1.25rem;
+  }
+  .form-container {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .steps-container::before {
+    display: none;
+  }
+  .step-item {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .steps-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* Optional: Larger shadows on big screens */
+  .benefit-card:hover {
+    box-shadow: 0 16px 32px rgba(255, 107, 53, 0.2);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Print styles (bonus for full power) */
+@media print {
+  .delivery-hero, .order-form-section, .btn-start-order {
+    display: none;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}

@@ -1,208 +1,363 @@
+/* ============================================================
+   🔥 GOMOTO NAVBAR – EXPERT UPGRADE (2.0)
+   Features: Glassmorphism, CSS Variables, Micro-interactions
+============================================================ */
+
+:root {
+  /* --- Palette --- */
+  --gomoto-primary: #FF6B35;
+  --gomoto-primary-dark: #E85D2A;
+  --gomoto-accent: #F7931E;
+  --gomoto-text-dark: #1A1A1A;
+  --gomoto-text-light: #555555;
+  --gomoto-white: #ffffff;
+  
+  /* --- UI Elements --- */
+  --nav-height: 76px;
+  --nav-radius: 12px;
+  --trans-speed: 0.35s;
+  --trans-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy feel */
+  
+  /* --- Shadows --- */
+  --shadow-sm: 0 4px 12px rgba(255, 107, 53, 0.08);
+  --shadow-hover: 0 8px 24px rgba(255, 107, 53, 0.2);
+  --shadow-glow: 0 0 15px rgba(255, 107, 53, 0.5);
+}
+
 /* =========================
-   BASE NAVBAR
+   1. NAVBAR BASE (Glassmorphism)
 ========================= */
 .gomoto-navbar {
-  background: #1f2330;
-  padding: 18px 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.92); /* Translucent */
+  backdrop-filter: blur(12px);           /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 107, 53, 0.15);
+  box-shadow: var(--shadow-sm);
+  position: sticky; /* Sticks to top */
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-.gomoto-container {
+/* Scroll State (Add .shrink via JS) */
+.gomoto-navbar.shrink {
+  padding: 8px 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   2. LOGO (Enhanced Brand)
+========================= */
+.gomoto-logo {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: var(--nav-radius);
+  background: linear-gradient(135deg, var(--gomoto-primary), var(--gomoto-accent));
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: transform var(--trans-bounce), box-shadow 0.3s ease;
 }
 
-/* LOGO */
-.gomoto-logo img {
-  height: 44px;
+.gomoto-logo:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.45);
 }
 
-/* TOGGLER */
-.gomoto-toggle {
-  border: none;
+.gomoto-logo .logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
-.gomoto-toggle:focus {
-  box-shadow: none;
+.gomoto-logo .brand-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
-/* COLLAPSE */
-.gomoto-collapse {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-/* CENTER MENU */
+/* =========================
+   3. NAV LINKS (Magnetic Hover)
+========================= */
 .gomoto-menu {
   display: flex;
-  margin: 0 auto;
   align-items: center;
+  gap: 8px; /* Compact spacing */
 }
 
-.gomoto-menu .nav-link,
-.gomoto-menu .dropdown-toggle {
-  color: #fff !important;
+.gomoto-menu .nav-link {
+  font-size: 0.95rem;
   font-weight: 600;
-  margin: 0 18px;
-  padding: 8px 0;
+  color: var(--gomoto-text-dark) !important;
+  padding: 10px 16px !important;
+  border-radius: 50px; /* Pill shape */
+  transition: all var(--trans-speed);
   position: relative;
-  transition: color 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.gomoto-menu .nav-link:hover,
-.gomoto-menu .dropdown-toggle:hover {
-  color: #ffb400 !important;
+/* Pill Background Animation */
+.gomoto-menu .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 107, 53, 0.08);
+  border-radius: 50px;
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.3s var(--trans-bounce);
+  z-index: -1;
 }
 
-/* DROPDOWN FIX */
+.gomoto-menu .nav-link:hover {
+  color: var(--gomoto-primary) !important;
+}
+
+.gomoto-menu .nav-link:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.gomoto-menu .nav-link.active {
+  background: rgba(255, 107, 53, 0.1);
+  color: var(--gomoto-primary) !important;
+}
+
+/* =========================
+   4. DROPDOWN (Floating Card)
+========================= */
 .gomoto-dropdown .dropdown-menu {
-  background: #1f2330;
-  border: 1px dashed rgba(255,255,255,0.15);
-  padding: 10px 0;
-  margin-top: 12px;
-  animation: dropdownFade 0.25s ease;
+  border: none;
+  margin-top: 15px; /* Offset from nav */
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  padding: 8px;
+  animation: slideUpFade 0.3s ease forwards;
+  min-width: 220px;
 }
 
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Triangle Indicator */
+.gomoto-dropdown .dropdown-menu::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: -2px -2px 5px rgba(0,0,0,0.03);
 }
 
 .gomoto-dropdown .dropdown-item {
-  color: #fff;
+  border-radius: 8px;
+  padding: 10px 16px;
   font-weight: 500;
-  padding: 10px 22px;
+  color: var(--gomoto-text-light);
+  transition: all 0.2s;
 }
 
 .gomoto-dropdown .dropdown-item:hover {
-  background: transparent;
-  color: #ffb400;
+  background: linear-gradient(90deg, #FFF2EA, transparent);
+  color: var(--gomoto-primary);
+  padding-left: 22px; /* Slide effect */
 }
 
-/* RIGHT ICONS */
+/* =========================
+   5. UTILITY ICONS & BADGES
+========================= */
 .gomoto-icons {
   display: flex;
   align-items: center;
-  gap: 18px;
-  color: #fff;
-  font-weight: 600;
+  gap: 12px;
 }
 
-.phone {
-  color: #ffb400;
-}
-
-.icon {
-  cursor: pointer;
-  position: relative;
-}
-
-.cart .count {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background: #ffb400;
-  color: #000;
-  font-size: 11px;
-  padding: 2px 6px;
+.nav-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  background: #f4f5f7;
+  color: var(--gomoto-text-dark);
+  transition: all var(--trans-speed);
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
+.nav-icon:hover {
+  background: #fff;
+  border-color: var(--gomoto-primary);
+  color: var(--gomoto-primary);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+  transform: rotate(8deg);
+}
 
+/* Cart Badge Pulse */
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--gomoto-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  animation: pulse-red 2s infinite;
+}
+
+/* Toggle Button (Hamburger) */
+.gomoto-toggle {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.gomoto-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gomoto-text-dark);
+  position: relative;
+  transition: background 0.2s;
+}
+.gomoto-toggle span::before,
+.gomoto-toggle span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--gomoto-text-dark);
+  transition: all 0.3s;
+}
+.gomoto-toggle span::before { top: -8px; }
+.gomoto-toggle span::after { top: 8px; }
+
+/* Toggled State (Make X shape) */
+.gomoto-toggle[aria-expanded="true"] span { background: transparent; }
+.gomoto-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+.gomoto-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
 /* =========================
-   LARGE DESKTOP (1400px+)
+   6. ANIMATIONS
 ========================= */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 107, 53, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+}
+
+/* ============================================================
+   7. EXPERT RESPONSIVENESS
+============================================================ */
+
+/* --- Large Laptops / Desktops (Min 1400px) --- */
 @media (min-width: 1400px) {
-  .gomoto-menu .nav-link {
-    margin: 0 22px;
-    font-size: 16px;
-  }
-
-  .gomoto-logo img {
-    height: 48px;
-  }
+  .container { max-width: 1320px; } /* Wider Layout */
+  .gomoto-menu { gap: 20px; }
+  .gomoto-menu .nav-link { font-size: 1.05rem; padding: 12px 20px !important; }
 }
 
-/* =========================
-   LAPTOPS (1200–1399px)
-========================= */
-@media (max-width: 1399px) {
-  .gomoto-menu .nav-link {
-    margin: 0 16px;
-  }
-}
-
-/* =========================
-   TABLETS (992–1199px)
-========================= */
-@media (max-width: 1199px) {
-  .gomoto-navbar {
-    padding: 14px 0;
-  }
-
-  .gomoto-collapse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .gomoto-menu {
-    flex-direction: column;
-    margin: 20px 0;
-  }
-
-  .gomoto-menu .nav-link {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-
-  .gomoto-icons {
-    margin-top: 15px;
-    justify-content: center;
-  }
-}
-
-/* =========================
-   LARGE PHONES (768–991px)
-========================= */
+/* --- Tablets & Small Laptops (Max 991px) --- */
 @media (max-width: 991px) {
-  .gomoto-logo img {
-    height: 40px;
-  }
-
-  .gomoto-menu .nav-link {
-    font-size: 15px;
-  }
-
-  .phone {
-    display: none; /* hide phone text on smaller screens */
-  }
-}
-
-/* =========================
-   SMALL PHONES (≤767px)
-========================= */
-@media (max-width: 767px) {
-  .gomoto-navbar {
-    padding: 12px 0;
+  .gomoto-navbar { padding: 10px 0; }
+  
+  /* Mobile Menu Drawer */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0,0,0,0.05);
   }
 
   .gomoto-menu {
-    margin: 15px 0;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
   }
 
   .gomoto-menu .nav-link {
-    font-size: 14px;
+    width: 100%;
+    text-align: left;
+    padding: 14px !important;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+  
+  .gomoto-menu .nav-link:hover {
+    background: var(--gomoto-primary);
+    color: #fff !important;
+    padding-left: 20px !important;
   }
 
-  .gomoto-icons {
-    gap: 14px;
+  /* Reset Dropdown styles for mobile */
+  .gomoto-dropdown .dropdown-menu {
+    box-shadow: none;
+    border: 1px dashed #ddd;
+    margin-top: 5px;
+    background: #fafafa;
   }
+  
+  .gomoto-icons { margin-top: 15px; justify-content: center; }
+}
+
+/* --- Mobile Landscape / Tablets (Max 768px) --- */
+@media (max-width: 768px) {
+  .gomoto-logo .brand-text { font-size: 1.1rem; }
+  .gomoto-logo .logo-img { height: 32px; }
+}
+
+/* --- Mobile Portrait (Max 576px) --- */
+@media (max-width: 576px) {
+  .gomoto-logo .brand-text { display: none; } /* Hide text to save space */
+  .gomoto-logo { padding: 6px; border-radius: 8px; }
+  .gomoto-logo .logo-img { height: 34px; } /* Slightly larger icon since text is gone */
+  
+  .nav-icon { width: 36px; height: 36px; font-size: 1rem; }
+}
+
+/* --- Ultra Small Devices (Max 320px - 360px) --- */
+@media (max-width: 360px) {
+  .gomoto-navbar { padding: 8px 0; }
+  
+  .gomoto-logo .logo-img { height: 28px; }
+  
+  /* Extreme spacing reduction */
+  .gomoto-icons { gap: 6px; }
+  .nav-icon { width: 32px; height: 32px; }
+  
+  .gomoto-toggle { width: 32px; height: 32px; }
+  .gomoto-toggle span { width: 20px; }
 }

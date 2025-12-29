@@ -1,198 +1,301 @@
-/* =========================== FOOTER BASE =========================== */
-.gomoto-footer {
-    background: #1f2330;
-    color: #b5b7c4;
-    position: relative;
-    padding-top: 160px;
+/* =========================== 
+   VARIABLES & RESET 
+   =========================== */
+:root {
+  --color-primary: #ffb400;
+  --color-primary-hover: #e5a200;
+  --color-dark: #1f2330;
+  --color-darker: #171a24;
+  --color-text: #b5b7c4;
+  --color-white: #ffffff;
+  
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* =========================== CTA SECTION =========================== */
+.gomoto-footer {
+  font-family: 'Inter', sans-serif; /* Ensure you have a nice font loaded */
+  background: var(--color-dark);
+  color: var(--color-text);
+  position: relative;
+  padding-top: 180px; /* Space for the floating CTA */
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* =========================== 
+   CTA SECTION (Floating Card)
+   =========================== */
 .footer-cta {
-    margin-top: -120px;
-    position: relative;
-    z-index: 2;
+  margin-top: -140px; /* Pull up to overlap section above */
+  position: relative;
+  z-index: 10;
 }
 
 .footer-cta-inner {
-    display: flex;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #ffb400;
+  display: flex;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease;
 }
 
-/* LEFT IMAGE */
+.footer-cta-inner:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* Left Image Area */
 .footer-cta-image {
-    width: 45%;
+  flex: 0 0 45%;
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-cta-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* RIGHT CONTENT */
+/* Zoom effect on image hover */
+.footer-cta-inner:hover .footer-cta-image img {
+  transform: scale(1.05);
+}
+
+/* Right Content Area */
 .footer-cta-content {
-    width: 55%;
-    display: flex;
-    align-items: center;
-    padding: 30px 40px;
-    gap: 20px;
-    color: #000;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 40px 50px;
+  gap: 25px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ffc133 100%);
+  color: #000;
 }
 
-.footer-cta-content span {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.footer-cta-content h3 {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 4px 0 0;
-}
-
-/* ICON */
 .footer-cta-icon {
-    width: 70px;
-    height: 70px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
+  width: 70px;
+  height: 70px;
+  min-width: 70px; /* Prevent squishing */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px); /* Modern glass effect */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-/* =========================== MAIN FOOTER =========================== */
+.footer-cta-text span {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.footer-cta-text h3 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem); /* Fluid typography */
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  color: #1a1a1a;
+}
+
+/* =========================== 
+   MAIN FOOTER 
+   =========================== */
 .footer-main {
-    padding: 140px 0 60px;
-    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent), #1f2330;
+  padding: 100px 0 60px;
+  background: radial-gradient(circle at 50% 0%, #2a2f40 0%, var(--color-dark) 70%);
+  position: relative;
+}
+
+/* Decorative top border glow */
+.footer-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+.footer-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-logo img {
-    height: 40px;
-    margin-bottom: 20px;
+  height: 45px;
+  margin-bottom: 25px;
+  filter: brightness(0) invert(1); /* Ensure logo is white if it's black */
+  opacity: 0.9;
 }
 
 .footer-text {
-    max-width: 600px;
-    margin: 0 auto 30px;
-    font-size: 14px;
-    line-height: 1.8;
+  max-width: 550px;
+  margin: 0 auto 35px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(181, 183, 196, 0.8);
 }
 
-/* SOCIAL ICONS */
+/* Social Icons - Modernized */
 .footer-socials {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .footer-socials a {
-    color: #ffb400;
-    font-size: 18px;
-    transition: transform 0.3s ease;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+  font-size: 18px;
+  border-radius: 50%;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
 }
 
 .footer-socials a:hover {
-    transform: translateY(-3px);
+  background: var(--color-primary);
+  color: #000;
+  transform: translateY(-5px) rotate(8deg); /* Playful hover */
+  border-color: var(--color-primary);
+  box-shadow: 0 5px 15px rgba(255, 180, 0, 0.4);
 }
 
-/* =========================== BOTTOM BAR =========================== */
+/* =========================== 
+   BOTTOM BAR 
+   =========================== */
 .footer-bottom {
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 13px;
+  background-color: var(--color-darker);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  opacity: 0.7;
 }
 
 .footer-bottom span {
-    color: #ffb400;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: color 0.3s;
 }
-/* ===========================
-   RESPONSIVE – ALL DEVICES
+
+.footer-bottom span:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+/* =========================== 
+   RESPONSIVE DESIGN 
    =========================== */
 
-/* LARGE DESKTOPS (1400px+) */
-@media (min-width: 1400px) {
-  .footer-cta-inner {
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .footer-cta-content h3 {
-    font-size: 32px;
-  }
-
-  .footer-text {
-    font-size: 15px;
+/* Laptop & Tablet Landscape (Max 1199px) */
+@media (max-width: 1199px) {
+  .footer-cta-content {
+    padding: 30px;
   }
 }
 
-/* LAPTOPS & TABLETS */
+/* Tablet Portrait & Small Laptops (Max 991px) */
 @media (max-width: 991px) {
+  .gomoto-footer {
+    padding-top: 140px;
+  }
+  
   .footer-cta {
-    margin-top: -90px;
+    margin-top: -100px;
   }
 
   .footer-cta-inner {
     flex-direction: column;
-  }
-
-  .footer-cta-image,
-  .footer-cta-content {
-    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Center the card */
   }
 
   .footer-cta-image {
-    height: 220px;
+    height: 250px;
+    width: 100%;
   }
 
   .footer-cta-content {
-    justify-content: center;
+    width: 100%;
+    justify-content: center; /* Center text */
     text-align: center;
-    padding: 30px 20px;
-  }
-
-  .footer-cta-icon {
-    margin-bottom: 10px;
-  }
-
-  .footer-main {
-    padding: 120px 0 50px;
+    padding: 40px 30px;
   }
 }
 
-/* TABLET PORTRAIT */
+/* Mobile Devices (Max 768px) */
 @media (max-width: 768px) {
   .footer-text {
-    max-width: 90%;
+    font-size: 0.95rem;
+    padding: 0 20px;
   }
-
-  .footer-socials {
-    gap: 22px;
+  
+  .footer-cta-content {
+    flex-direction: column; /* Stack Icon and Text */
+    gap: 15px;
+  }
+  
+  .footer-cta-text h3 {
+    font-size: 1.8rem;
   }
 }
 
-/* MOBILE DEVICES */
+/* Small Phones (Max 576px) */
 @media (max-width: 576px) {
+  .gomoto-footer {
+    padding-top: 100px;
+  }
+
   .footer-cta {
     margin-top: -60px;
+    padding: 0 15px; /* Add breathing room on sides */
+  }
+
+  .footer-cta-inner {
+    border-radius: 15px;
   }
 
   .footer-cta-image {
     height: 180px;
   }
 
-  .footer-cta-content h3 {
-    font-size: 22px;
+  .footer-cta-content {
+    padding: 30px 20px;
   }
-
-  .footer-cta-content span {
-    font-size: 13px;
-  }
-
+  
   .footer-cta-icon {
     width: 60px;
     height: 60px;
@@ -200,27 +303,36 @@
   }
 
   .footer-main {
-    padding: 100px 0 40px;
-  }
-
-  .footer-text {
-    font-size: 13px;
+    padding-top: 80px; /* Adjust for smaller overlap */
   }
 }
 
-/* EXTRA SMALL PHONES (360px) */
-@media (max-width: 360px) {
-  .footer-cta-content h3 {
-    font-size: 20px;
+/* Tiny Phones (Min 320px - Max 375px) */
+@media (max-width: 375px) {
+  .footer-cta-content {
+    padding: 20px 15px;
   }
-
-  .footer-cta-icon {
-    width: 54px;
-    height: 54px;
-    font-size: 22px;
-  }
-
-  .footer-bottom {
+  
+  .footer-cta-text span {
     font-size: 12px;
+  }
+
+  .footer-cta-text h3 {
+    font-size: 1.5rem; /* Ensure number fits */
+  }
+
+  .footer-socials {
+    gap: 10px;
+  }
+
+  .footer-socials a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .footer-bottom {
+    font-size: 0.8rem;
+    padding: 20px 10px;
   }
 }

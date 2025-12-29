@@ -1,0 +1,221 @@
+/* ============================
+      ADS – GLOBAL SPACING
+============================== */
+.ads-container {
+  margin: 30px 0;
+  width: 100%;
+}
+
+/* ============================
+      HORIZONTAL AD BANNER
+============================== */
+.ad-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: 12px;
+  color: white;
+  gap: clamp(15px, 3vw, 40px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+}
+
+.ad-banner:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+}
+
+.ad-icon {
+  font-size: clamp(40px, 6vw, 70px);
+  flex-shrink: 0;
+}
+
+/* MAIN CONTENT */
+.ad-content {
+  flex: 1;
+  text-align: left;
+}
+
+.ad-title {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ad-subtitle {
+  margin-top: 6px;
+  font-size: clamp(14px, 2vw, 18px);
+  opacity: 0.95;
+}
+
+/* CTA BUTTON */
+.ad-cta {
+  padding: clamp(10px, 2vw, 14px) clamp(25px, 5vw, 40px);
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 700;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #222;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.ad-cta:hover {
+  background-color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+}
+
+/* ============================
+      DOTS (SLIDER)
+============================== */
+.ad-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #FF6B35;
+  transform: scale(1.3);
+}
+
+/* ============================
+          SIDEBAR ADS
+============================== */
+.ads-container.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-ad {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+}
+
+.sidebar-ad:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.sidebar-ad-header {
+  padding: clamp(15px, 3vw, 25px);
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-ad-icon {
+  font-size: clamp(40px, 5vw, 60px);
+}
+
+.sidebar-ad-content {
+  padding: clamp(15px, 3vw, 25px);
+}
+
+.sidebar-ad-content h4 {
+  font-size: clamp(16px, 2.5vw, 20px);
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.sidebar-ad-content p {
+  font-size: clamp(13px, 2vw, 15px);
+  color: #666;
+  margin: 0 0 15px;
+}
+
+/* Sidebar CTA */
+.sidebar-ad-btn {
+  width: 100%;
+  padding: clamp(10px, 2vw, 14px);
+  font-size: clamp(14px, 2vw, 16px);
+  background: #FF6B35;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar-ad-btn:hover {
+  background-color: #E55A24;
+  transform: scale(1.03);
+}
+
+/* ============================
+      RESPONSIVE BREAKPOINTS
+============================== */
+
+/* Tablets – max-width: 992px */
+@media (max-width: 992px) {
+  .ad-banner {
+    padding: 25px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ad-content {
+    text-align: center;
+  }
+
+  .ad-cta {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile – max-width: 600px */
+@media (max-width: 600px) {
+  .ad-banner {
+    padding: 20px;
+    gap: 12px;
+  }
+}
+
+/* Small Phones – max-width: 400px */
+@media (max-width: 400px) {
+  .ad-title {
+    font-size: 18px;
+  }
+
+  .ad-subtitle {
+    font-size: 13px;
+  }
+
+  .ad-cta {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Ultra Small Phones – down to 320px */
+@media (max-width: 340px) {
+  .ad-banner {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .ad-icon {
+    font-size: 32px;
+  }
+}

@@ -2,6 +2,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Css/CafeRestaurant.css";
+import "./Css/animations.css";
 
 // import your 5 images
 import img1 from "./Images/burger house img.jpg";

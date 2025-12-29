@@ -1,0 +1,275 @@
+/* ===========================
+   LOGIN PAGE BASE
+=========================== */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(1px);
+}
+
+
+/* ===========================
+   LOGIN BOX
+=========================== */
+.login-box {
+  position: relative;
+  z-index: 2;
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #1f2330;
+  font-weight: 700;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  font-size: 15px;
+  color: #1f2330;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #ffb400;
+  box-shadow: 0px 0px 5px rgba(255, 180, 0, 0.4);
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ffb400;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #e7a200;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .login-box {
+    max-width: 350px;
+    padding: 28px;
+  }
+
+  .login-box h2 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .login-box {
+    max-width: 100%;
+    padding: 22px;
+    border-radius: 14px;
+  }
+
+  .login-box h2 {
+    font-size: 22px;
+  }
+
+  .input-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    padding: 13px;
+    font-size: 16px;
+  }
+}
+/* ===========================
+   EXTRA SMALL DEVICES (max 380px)
+=========================== */
+@media (max-width: 380px) {
+  .login-box {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .login-box h2 {
+    font-size: 20px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group input {
+    padding: 11px;
+    font-size: 13.5px;
+  }
+
+  .login-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* ===========================
+   VERY SMALL PHONES (max 340px)
+=========================== */
+@media (max-width: 340px) {
+  .login-box {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .login-box h2 {
+    font-size: 19px;
+  }
+
+  .input-group input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .login-btn {
+    padding: 11px;
+    font-size: 14.5px;
+  }
+}
+
+/* ===========================
+   ULTRA SMALL PHONES (max 320px)
+   Example: old iPhones, small Android phones
+=========================== */
+@media (max-width: 320px) {
+  .login-page {
+    padding: 10px;
+  }
+
+  .login-box {
+    padding: 16px;
+    border-radius: 9px;
+    max-width: 100%;
+  }
+
+  .login-box h2 {
+    font-size: 18px;
+  }
+
+  .input-group label {
+    font-size: 13px;
+  }
+
+  .input-group input {
+    padding: 9px;
+    font-size: 12.5px;
+  }
+
+  .login-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+/* ===========================
+   NO ACCOUNT / SIGNUP LINK
+=========================== */
+.no-account-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+.signup-link {
+  color: #ffb400;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.signup-link:hover {
+  color: #e7a200;
+  text-decoration: underline;
+}
+/* NO ACCOUNT / SIGNUP LINK */
+.no-account-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+.signup-link {
+  color: #ffb400;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.signup-link:hover {
+  color: #e7a200;
+  text-decoration: underline;
+}

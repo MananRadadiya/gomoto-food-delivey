@@ -1,0 +1,327 @@
+/* ===========================
+   ACCOUNT PAGE (Ultra Responsive)
+=========================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.account-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-bottom: 50px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.account-hero {
+  position: relative;
+  height: 260px;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.account-hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.28);
+}
+
+.account-hero h1 {
+  font-size: clamp(22px, 4vw, 42px);
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.account-hero p {
+  font-size: clamp(12px, 1.2vw, 16px);
+  margin: 10px 0 0;
+  position: relative;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.account-container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 0 clamp(8px, 2vw, 20px);
+}
+
+/* ---------- TABS ---------- */
+.account-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 25px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  color: #333;
+  font-size: clamp(13px, 1.6vw, 15px);
+}
+
+.tab-btn:hover {
+  border-color: #FF6B35;
+  color: #FF6B35;
+}
+
+.tab-btn.active {
+  background-color: #FF6B35;
+  color: white;
+  border-color: #FF6B35;
+  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.25);
+}
+
+/* ---------- CONTENT BOX ---------- */
+.account-content {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+.tab-content h2 {
+  font-size: clamp(18px, 3vw, 24px);
+  color: #333;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #FF6B35;
+}
+
+/* ---------- PROFILE INFO GRID ---------- */
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(12px, 2vw, 25px);
+  margin-bottom: 30px;
+}
+
+.info-group label {
+  font-weight: 700;
+  color: #666;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.info-group p {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #333;
+  margin: 0;
+}
+
+/* ---------- BUTTONS ---------- */
+.edit-btn,
+.save-btn,
+.logout-btn,
+.view-btn {
+  border-radius: 7px;
+  font-weight: 600;
+  transition: 0.25s ease;
+  cursor: pointer;
+  font-size: clamp(13px, 1.5vw, 16px);
+}
+
+/* Primary Button */
+.edit-btn {
+  padding: 12px 30px;
+  background: #FF6B35;
+  color: white;
+  border: none;
+}
+
+.edit-btn:hover {
+  background: #E55A24;
+  transform: translateY(-2px);
+}
+
+/* Save */
+.save-btn {
+  padding: 12px 30px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Logout */
+.logout-btn {
+  padding: 12px 30px;
+  background-color: transparent;
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.logout-btn:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* View */
+.view-btn {
+  padding: 10px 22px;
+  background-color: #F7931E;
+  color: white;
+  border: none;
+}
+
+.view-btn:hover {
+  background-color: #E57A1F;
+}
+
+/* ---------- ORDERS ---------- */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-card {
+  border: 1px solid #eee;
+  padding: clamp(15px, 3vw, 22px);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  background: white;
+}
+
+.order-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.order-status.delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* ---------- SETTINGS ---------- */
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+.setting-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Toggle */
+.setting-item input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+}
+
+/* =====================================================
+   🚀 NEW SUPER-RESPONSIVE BREAKPOINTS
+===================================================== */
+
+/* Large Screens & Desktops (1280px–1600px) */
+@media (max-width: 1400px) {
+  .account-container {
+    max-width: 850px;
+  }
+}
+
+/* Medium Laptops (1024px–1280px) */
+@media (max-width: 1200px) {
+  .account-container {
+    max-width: 780px;
+  }
+}
+
+/* Tablets Portrait + Landscape */
+@media (max-width: 992px) {
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+  .account-tabs {
+    flex-direction: column;
+  }
+  .tab-btn {
+    width: 100%;
+  }
+}
+
+/* Phones (600px) */
+@media (max-width: 600px) {
+  .account-hero {
+    height: 200px;
+  }
+  .account-container {
+    padding: 0 12px;
+  }
+}
+
+/* Small Phones (420px–480px) */
+@media (max-width: 480px) {
+  .order-card {
+    padding: 14px;
+  }
+  .edit-btn,
+  .save-btn,
+  .logout-btn,
+  .view-btn {
+    width: 100%;
+  }
+}
+
+/* Ultra Small Phones (320px–380px) */
+@media (max-width: 380px) {
+  .tab-btn {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+  .order-header {
+    gap: 6px;
+  }
+}

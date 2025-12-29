@@ -1,0 +1,333 @@
+/* ============================================================
+   ⭐ PREMIUM REVIEWS PAGE CSS (FULLY RESPONSIVE & MODERNIZED)
+   ============================================================ */
+
+:root {
+  --primary: #FF6B35;
+  --primary-dark: #e85d2c;
+  --gold: #F7931E;
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-light: #f9f9f9;
+  --white: #fff;
+
+  --radius: 14px;
+  --shadow-sm: 0 4px 10px rgba(0,0,0,0.08);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Main Wrapper */
+.reviews-page {
+  min-height: 100vh;
+  background: var(--bg-light);
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   ⭐ HERO SECTION
+   ============================================================ */
+
+.reviews-hero {
+  background: url("../Images/INNER_header_02.jpg") center/cover no-repeat;
+  height: clamp(220px, 30vw, 380px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.reviews-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+}
+
+.reviews-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  z-index: 2;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+.reviews-hero p {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  margin-top: 10px;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   ⭐ OVERALL RATING
+   ============================================================ */
+
+.overall-rating {
+  background: var(--white);
+  padding: 60px 20px;
+  margin-block: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.rating-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  align-items: start;
+}
+
+.big-rating {
+  text-align: center;
+}
+
+.big-rating h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin: 0;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.big-rating p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin: 12px 0;
+}
+
+.stars-big {
+  margin: 20px 0;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--gold);
+}
+
+.total-reviews {
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.rating-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.rating-bar {
+  display: grid;
+  grid-template-columns: 80px 1fr 40px;
+  gap: 18px;
+  align-items: center;
+}
+
+.rating-bar span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.rating-bar .bar {
+  height: 10px;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.rating-bar .bar div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--gold));
+}
+
+.rating-bar span:last-child {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* ============================================================
+   ⭐ REVIEWS GRID
+   ============================================================ */
+
+.reviews-section {
+  padding: 40px 20px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 30px;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  font-size: 2.8rem;
+}
+
+.reviewer-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.verified {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #4CAF50;
+  font-size: 0.75rem;
+  color: white;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.review-rating .stars span {
+  font-size: 1.1rem;
+}
+
+.review-text {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-block: 12px 18px;
+}
+
+.review-actions {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 14px;
+}
+
+.btn-helpful,
+.btn-report {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-helpful:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-report:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* ============================================================
+   ⭐ CTA SECTION
+   ============================================================ */
+
+.leave-review-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
+  padding: 70px 20px;
+  margin: 40px 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  color: white;
+}
+
+.leave-review-cta h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 10px;
+}
+
+.leave-review-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  opacity: 0.95;
+}
+
+.btn-review {
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  background: white;
+  color: var(--primary);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-review:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   ⭐ RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+  .rating-container {
+    gap: 35px;
+  }
+
+  .review-card {
+    padding: 22px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones (576px) */
+@media (max-width: 576px) {
+  .rating-bar {
+    grid-template-columns: 60px 1fr 30px;
+  }
+
+  .review-header {
+    gap: 10px;
+  }
+}
+
+/* Small Phones (375px - 320px) */
+@media (max-width: 400px) {
+  .review-card {
+    padding: 18px;
+  }
+
+  .btn-helpful,
+  .btn-report {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .reviews-hero h1 {
+    font-size: 1.6rem;
+  }
+}

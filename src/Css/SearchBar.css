@@ -1,0 +1,270 @@
+/* ======================================
+   FULLSCREEN SEARCH BAR (PREMIUM UI)
+   Ultra Smooth | Glass | Responsive
+====================================== */
+
+/* Backdrop Overlay */
+.search-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 12, 18, 0.85);
+  backdrop-filter: blur(10px) saturate(140%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 70px;
+  z-index: 5000;
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* Search Panel */
+.search-panel {
+  width: 65%;
+  max-width: 800px;
+  min-width: 260px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 36px;
+  padding: 16px 26px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+/* Input */
+.search-panel input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 19px;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Close Button */
+.close-search {
+  font-size: 26px;
+  color: #585858;
+  cursor: pointer;
+  transition: 0.25s ease;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.close-search:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: rotate(90deg);
+}
+
+/* Results Box */
+.search-results {
+  margin-top: 22px;
+  width: 65%;
+  max-width: 800px;
+  min-width: 260px;
+  background: #ffffff;
+  border-radius: 18px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 12px 0;
+
+  box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.12);
+  animation: fadeUp 0.35s ease-out;
+}
+
+/* Each Result */
+.search-item {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  font-size: 16.5px;
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.search-item i {
+  color: #ff6b35;
+  font-size: 18px;
+}
+
+.search-item:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.07),
+    rgba(247, 147, 30, 0.07)
+  );
+  border-left-color: #ff6b35;
+  color: #ff6b35;
+  padding-left: 28px;
+}
+
+/* No Result Box */
+.search-no-result {
+  margin-top: 18px;
+  width: 65%;
+  max-width: 800px;
+  min-width: 260px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  color: #444;
+  font-size: 16px;
+
+  box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================================
+   RESPONSIVENESS — ULTRA FLUID
+====================================== */
+
+/* Large Laptops (1440px ↓) */
+@media (max-width: 1440px) {
+  .search-panel,
+  .search-results,
+  .search-no-result {
+    width: 70%;
+  }
+}
+
+/* Tablets (1024px ↓) */
+@media (max-width: 1024px) {
+  .search-panel,
+  .search-results,
+  .search-no-result {
+    width: 80%;
+  }
+
+  .search-panel input {
+    font-size: 17px;
+  }
+}
+
+/* Tablets + Large Phones (768px ↓) */
+@media (max-width: 768px) {
+  .search-panel,
+  .search-results,
+  .search-no-result {
+    width: 90%;
+  }
+
+  .search-panel {
+    padding: 14px 20px;
+    border-radius: 32px;
+  }
+
+  .search-panel input {
+    font-size: 16px;
+  }
+
+  .close-search {
+    font-size: 24px;
+  }
+}
+
+/* Mobile Medium (480px ↓) */
+@media (max-width: 480px) {
+  .search-wrapper {
+    padding-top: 55px;
+  }
+
+  .search-panel {
+    padding: 13px 18px;
+    border-radius: 28px;
+  }
+
+  .search-panel input {
+    font-size: 15px;
+  }
+
+  .close-search {
+    font-size: 22px;
+  }
+}
+
+/* Small Phones (360px ↓) */
+@media (max-width: 360px) {
+  .search-wrapper {
+    padding-top: 50px;
+  }
+
+  .search-panel {
+    padding: 10px 16px;
+    border-radius: 25px;
+  }
+
+  .search-panel input {
+    font-size: 14px;
+  }
+
+  .close-search {
+    font-size: 20px;
+  }
+
+  .search-results,
+  .search-no-result {
+    width: 92%;
+  }
+}
+
+/* Very Small (320px ↓) */
+@media (max-width: 320px) {
+  .search-wrapper {
+    padding-top: 45px;
+  }
+
+  .search-panel {
+    padding: 9px 14px;
+    border-radius: 22px;
+  }
+
+  .search-panel input {
+    font-size: 13px;
+  }
+
+  .close-search {
+    font-size: 18px;
+  }
+}
+
+/* ======================================
+   ANIMATIONS
+====================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-18px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
