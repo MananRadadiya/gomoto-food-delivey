@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Css/Popular.css";
 import "./Css/animations.css";
 
-// ⭐ IMPORT ALL IMAGES
 import burger1 from "./Images/burger1.jpg";
 import burger2 from "./Images/burger2.jpg";
 import burger3 from "./Images/burger3.jpg";
@@ -23,25 +22,17 @@ import meat2 from "./Images/meat_02.jpg";
 import meat3 from "./Images/meat_03.jpg";
 import meat4 from "./Images/meat_04.jpg";
 
-
 function Popular() {
-
-  // ⭐ Active Tab State
   const [activeTab, setActiveTab] = useState("fastfood");
 
-  // ⭐ Animation Trigger
   useEffect(() => {
     const container = document.querySelector(".popular-products");
+    if (!container) return;
 
     container.classList.remove("animate");
-
-    setTimeout(() => {
-      container.classList.add("animate");
-    }, 10);
+    setTimeout(() => container.classList.add("animate"), 10);
   }, [activeTab]);
 
-
-  // ⭐ Data for all categories
   const data = {
     fastfood: [
       { img: burger1, title: "Cheeseburger with Salad", price: "$19.00" },
@@ -72,46 +63,32 @@ function Popular() {
     ],
   };
 
-
   return (
     <section className="popular-section">
       <div className="container text-center">
 
         <span className="popular-sub animate-slideUp">Quick pick</span>
-        <h2 className="popular-title animate-slideUp" style={{ animationDelay: '0.1s' }}>Popular Goods</h2>
+        <h2 className="popular-title animate-slideUp" style={{ animationDelay: "0.1s" }}>
+          Popular Goods
+        </h2>
 
-        {/* ⭐ TABS */}
+        {/* TABS */}
         <div className="popular-tabs">
-          <button
-            className={activeTab === "fastfood" ? "active" : ""}
-            onClick={() => setActiveTab("fastfood")}
-          >
-            Fastfood
-          </button>
-
-          <button
-            className={activeTab === "pizza" ? "active" : ""}
-            onClick={() => setActiveTab("pizza")}
-          >
-            Hot Pizza
-          </button>
-
-          <button
-            className={activeTab === "asian" ? "active" : ""}
-            onClick={() => setActiveTab("asian")}
-          >
-            Asian Food
-          </button>
-
-          <button
-            className={activeTab === "meat" ? "active" : ""}
-            onClick={() => setActiveTab("meat")}
-          >
-            Meat & Seafood
-          </button>
+          {["fastfood", "pizza", "asian", "meat"].map((tab) => (
+            <button
+              key={tab}
+              className={activeTab === tab ? "active" : ""}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab === "fastfood" && "Fastfood"}
+              {tab === "pizza" && "Hot Pizza"}
+              {tab === "asian" && "Asian Food"}
+              {tab === "meat" && "Meat & Seafood"}
+            </button>
+          ))}
         </div>
 
-        {/* ⭐ PRODUCT CARDS – animated */}
+        {/* PRODUCT CARDS */}
         <div className="row popular-products animate">
           {data[activeTab].map((item, index) => (
             <div className="col-lg-3 col-md-6" key={index}>
@@ -119,7 +96,7 @@ function Popular() {
                 <img src={item.img} alt={item.title} />
                 <h5>{item.title}</h5>
                 <p className="price">{item.price}</p>
-                <button className="animate-glow">Add to cart</button>
+                <button>Add to cart</button>
               </div>
             </div>
           ))}

@@ -209,3 +209,61 @@
     gap: 16px;
   }
 }
+/* FIX: stack columns properly on mobile */
+@media (max-width: 991px) {
+  .second-section {
+    display: block !important;
+  }
+
+  .second-image,
+  .second-content {
+    width: 100% !important;
+  }
+
+  .second-image img {
+    width: 100%;
+    height: auto !important;
+  }
+}
+/* FIX ENTIRE SECTION ON MOBILE */
+@media (max-width: 991px) {
+  .second-section {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .second-image,
+  .second-content {
+    width: 100% !important;
+    flex: unset !important;
+    max-width: 100% !important;
+  }
+
+  .second-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .content-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* FIX HUGE PADDING ON MOBILE */
+@media (max-width: 767px) {
+  .second-content {
+    padding: 35px 20px !important;
+    text-align: center !important;
+  }
+}
+
+/* SINGLE COLUMN FEATURES ON SMALL SCREENS */
+@media (max-width: 575px) {
+  .features {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+}

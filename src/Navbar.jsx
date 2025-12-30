@@ -1,5 +1,4 @@
-// src/Navbar.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // Import useEffect
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";
@@ -13,6 +12,23 @@ function Navigation() {
   const { getCartCount } = useCart();
   const navigate = useNavigate();
   const cartCount = getCartCount();
+
+  // State for the animation class
+  const [isBumping, setIsBumping] = useState(false);
+
+  // EFFECT: Trigger animation when cartCount changes
+  useEffect(() => {
+    if (cartCount === 0) return;
+
+    setIsBumping(true);
+
+    // Remove the class after 300ms (length of animation)
+    const timer = setTimeout(() => {
+      setIsBumping(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [cartCount]);
 
   const handleLogoClick = () => {
     navigate('/');
@@ -45,6 +61,7 @@ function Navigation() {
 
           {/* CENTER MENU */}
           <Nav className="ms-auto gomoto-menu gap-3">
+             {/* ... (Menu items remain the same) ... */}
             <Nav.Link href="/" className="nav-link-item">
               <i className="ri-home-line"></i> Home
             </Nav.Link>
@@ -96,9 +113,10 @@ function Navigation() {
               <i className="ri-user-circle-line"></i>
             </Nav.Link>
 
-            {/* CART ICON */}
+            {/* CART ICON - UPDATED */}
             <span
-              className="nav-icon cart-icon animate-glow"
+              // Add the conditional 'bump' class here
+              className={`nav-icon cart-icon ${isBumping ? 'bump' : ''}`} 
               onClick={() => navigate('/cart')}
               title="Shopping Cart"
             >

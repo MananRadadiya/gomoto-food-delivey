@@ -361,3 +361,85 @@
   .gomoto-toggle { width: 32px; height: 32px; }
   .gomoto-toggle span { width: 20px; }
 }
+/* ... Previous CSS remains same until Utility Icons ... */
+
+/* =========================
+   5. UTILITY ICONS & BADGES
+========================= */
+.gomoto-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f4f5f7;
+  color: var(--gomoto-text-dark);
+  transition: all var(--trans-speed); /* Smooth hover transition */
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative; /* Ensure badge is positioned relative to this */
+}
+
+.nav-icon:hover {
+  background: #fff;
+  border-color: var(--gomoto-primary);
+  color: var(--gomoto-primary);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+  transform: rotate(8deg);
+}
+
+/* --- THE FIX: Cart Bump Animation Class --- */
+/* This class is added by JS for 300ms when an item is added */
+.nav-icon.bump {
+  animation: cart-pop 0.3s ease-out;
+  background: #fff; /* Highlight background briefly */
+  color: var(--gomoto-primary);
+  border-color: var(--gomoto-primary);
+}
+
+/* Cart Badge - FIXED (Removed infinite animation) */
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--gomoto-primary);
+  color: white;
+  font-size: 0.75rem; /* Slightly larger for readability */
+  font-weight: 700;
+  min-width: 18px; /* Use min-width to handle double digits like '10' */
+  height: 18px;
+  padding: 0 4px; /* Add padding for wider numbers */
+  border-radius: 10px; /* Pill shape for double digits */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  /* Removed animation: pulse-red infinite; -> This was causing the glitch */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ... Toggle Button styles ... */
+
+/* =========================
+   6. ANIMATIONS
+========================= */
+
+/* The new Pop animation for the whole icon */
+@keyframes cart-pop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.2); }
+  50% { transform: scale(1.15) rotate(5deg); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
