@@ -1,5 +1,6 @@
-/* Animations CSS */
+/* Enhanced Animations CSS - Unleashing All the Powers! 🚀 */
 
+/* Original Animations (Kept for Reference) */
 /* Fade In Animation */
 @keyframes fadeIn {
   from {
@@ -262,7 +263,7 @@
   transition: all 0.15s ease-out;
 }
 
-/* ========== ADVANCED ANIMATIONS ========== */
+/* ========== ADVANCED ANIMATIONS (Original) ========== */
 
 /* Bounce In From Top */
 @keyframes bounceInDown {
@@ -383,7 +384,7 @@
   }
 }
 
-/* ========== ANIMATION CLASSES ========== */
+/* ========== ANIMATION CLASSES (Original) ========== */
 .animate-bounceInDown {
   animation: bounceInDown 0.8s ease-out;
 }
@@ -428,3 +429,397 @@
 .stagger-4 { animation-delay: 0.4s; }
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
+
+/* ========== NEW SUPERPOWER ANIMATIONS - Leveling Up the Cool Factor! 🔥💥 */
+
+/* 3D Flip Card */
+@keyframes flip3D {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+.animate-flip3D {
+  animation: flip3D 1.2s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* Hinge Drop (Like a Door Hinge) */
+@keyframes hinge {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
+  20%, 60% {
+    transform: rotateX(80deg);
+    transform-origin: top;
+  }
+  40%, 80% {
+    transform: rotateX(60deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+}
+
+.animate-hinge {
+  animation: hinge 2s ease-in-out forwards;
+  transform-style: preserve-3d;
+}
+
+/* Jack In The Box (Pop Out with Bounce) */
+@keyframes jackInTheBox {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-jackInTheBox {
+  animation: jackInTheBox 0.8s cubic-bezier(.26, .53, .74, 1.48);
+}
+
+/* Tada (Shake with Scale) */
+@keyframes tada {
+  0% {
+    transform: scale(1);
+  }
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+.animate-tada {
+  animation: tada 1s ease-in-out;
+}
+
+/* Rubber Band Stretch */
+@keyframes rubberBand {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.animate-rubberBand {
+  animation: rubberBand 0.75s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* Jello Wobble */
+@keyframes jello {
+  0%, 11.1%, 100% {
+    transform: none;
+  }
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+
+.animate-jello {
+  animation: jello 0.6s infinite;
+  transform-origin: center;
+}
+
+/* Morphing Circle to Square */
+@keyframes morphCircleToSquare {
+  0% {
+    border-radius: 50%;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 0%;
+    transform: scale(0.8);
+  }
+  100% {
+    border-radius: 50%;
+    transform: scale(1);
+  }
+}
+
+.animate-morphCircleToSquare {
+  animation: morphCircleToSquare 2s ease-in-out infinite;
+  background: #FF6B35;
+}
+
+/* Particle Burst (Simple CSS Particles - Use with multiple elements) */
+@keyframes particleBurst {
+  0% {
+    opacity: 1;
+    transform: scale(0) translate(0, 0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1) translate(var(--particle-x, 0), var(--particle-y, 0));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translate(var(--particle-x, 0), var(--particle-y, 0));
+  }
+}
+
+.animate-particleBurst {
+  animation: particleBurst 1s ease-out forwards;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #FF6B35;
+}
+
+/* Infinite Loading Spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spinner {
+  animation: spin 1s linear infinite;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #FF6B35;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+/* Wave Hello (Hand Wave) */
+@keyframes wave {
+  0%, 100% { transform: rotate(0); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(15deg); }
+  20%, 40%, 60%, 80% { transform: rotate(-10deg); }
+}
+
+.animate-wave {
+  animation: wave 2.5s infinite;
+  transform-origin: 70% center;
+}
+
+/* Lightning Bolt Flash */
+@keyframes lightning {
+  0%, 90%, 100% {
+    background: #fff;
+    box-shadow: none;
+  }
+  10%, 20% {
+    background: #FFD700;
+    box-shadow: 0 0 10px #FFD700;
+  }
+  30%, 40% {
+    background: #87CEEB;
+    box-shadow: 0 0 20px #87CEEB;
+  }
+  50%, 60% {
+    background: #FF4500;
+    box-shadow: 0 0 30px #FF4500;
+  }
+  70%, 80% {
+    background: #FF1493;
+    box-shadow: 0 0 40px #FF1493;
+  }
+}
+
+.animate-lightning {
+  animation: lightning 0.5s ease-in-out;
+}
+
+/* Firework Explode */
+@keyframes firework {
+  0% {
+    opacity: 1;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+.animate-firework {
+  animation: firework 1s ease-out forwards;
+}
+
+/* Ghost Float (Ethereal Movement) */
+@keyframes ghostFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0px) rotate(-1deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-5px) rotate(1deg);
+    opacity: 0.7;
+  }
+}
+
+.animate-ghostFloat {
+  animation: ghostFloat 4s ease-in-out infinite;
+}
+
+/* Energy Pulse (Sci-Fi Beam) */
+@keyframes energyPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 107, 53, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+  }
+}
+
+.animate-energyPulse {
+  animation: energyPulse 1.5s infinite;
+}
+
+/* ========== NEW SUPERPOWER CLASSES ========== */
+.animate-flip3D:hover {
+  animation-play-state: paused;
+}
+
+.animate-hinge {
+  perspective: 1000px;
+}
+
+.animate-jackInTheBox {
+  display: inline-block;
+}
+
+.animate-tada:hover {
+  animation-play-state: paused;
+}
+
+.animate-rubberBand {
+  display: inline-block;
+}
+
+.animate-jello {
+  display: inline-block;
+}
+
+.animate-morphCircleToSquare {
+  width: 100px;
+  height: 100px;
+}
+
+.animate-wave {
+  display: inline-block;
+}
+
+.animate-lightning {
+  transition: none;
+}
+
+.animate-firework {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #FFD700, #FF4500);
+  border-radius: 50%;
+}
+
+/* ========== ENHANCED HOVER EFFECTS WITH POWERS ========== */
+.super-btn:hover {
+  animation: tada 0.5s ease-in-out, glow 1s infinite;
+  transform: scale(1.05);
+}
+
+.power-card:hover {
+  animation: flip3D 0.6s ease-in-out, rubberBand 0.75s ease-in-out 0.3s;
+  cursor: grab;
+}
+
+.ultimate-float:hover {
+  animation: ghostFloat 2s ease-in-out infinite, energyPulse 1s infinite;
+}
+
+/* ========== RESPONSIVE POWER-UPS ========== */
+@media (prefers-reduced-motion: no-preference) {
+  .power-up {
+    animation-duration: 0.8s;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

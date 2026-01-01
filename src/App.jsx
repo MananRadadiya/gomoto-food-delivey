@@ -18,17 +18,18 @@ import Footer from './Footer';
 
 import Login from './Login';
 import Register from './Register';
-import AllProducts from './AllProducts';   
-import Cart from './Cart';                 
-import Checkout from './Checkout';         
-import Account from './Account';           
-import Blog from './Blog';               
+import AllProducts from './AllProducts';
+import Cart from './Cart';
+import Checkout from './Checkout';
+import Account from './Account';
+import Blog from './Blog';
 import Contact from './Contact';
 import Specials from './Specials';
 import Gallery from './Gallery';
 import Locations from './Locations';
 import Reviews from './Reviews';
-import Delivery from './Delivery';         
+import Delivery from './Delivery';
+import Chatbot from './Chatbot';
 
 
 function App() {
@@ -97,6 +98,8 @@ function App() {
           <Route path="/delivery" element={<Delivery />} />
 
         </Routes>
+        {/* NEW: ALWAYS VISIBLE CHATBOT */}
+        <Chatbot />
 
         {/* ALWAYS VISIBLE FOOTER */}
         <Footer />
